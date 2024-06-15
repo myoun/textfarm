@@ -1,13 +1,11 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "net.fabricmc.example.mixin",
+  "package": "app.myoun.textfarm.mixin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": [
-  ],
-  "client": [
-    "ExampleMixin"
-  ],
+  "mixins": [],
+  "client": [],
+  "server": [],
   "injectors": {
     "defaultRequire": 1
   }

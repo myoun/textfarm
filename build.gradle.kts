@@ -14,6 +14,8 @@ repositories {
     // Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
     // See https://docs.gradle.org/current/userguide/declaring_repositories.html
     // for more information about repositories.
+    maven("https://maven.nucleoid.xyz")
+    maven("https://maven.enginehub.org/repo/")
 }
 
 dependencies {
@@ -23,10 +25,19 @@ dependencies {
 
     modImplementation("net.fabricmc:fabric-language-kotlin:${property("fabric_kotlin_version")}")
     modImplementation("net.fabricmc.fabric-api:fabric-api:${property("fabric_api_version")}")
+
+    modImplementation(include("eu.pb4:polymer-core:${property("polymer_version")}")!!)
+    modImplementation(include("eu.pb4:sgui:${property("sgui_version")}")!!)
+    modImplementation("net.luckperms:api:${property("luckperms_version")}")
+
+    implementation(include("org.jetbrains.exposed:exposed-core:${property("exposed_version")}")!!)
+    implementation(include("org.jetbrains.exposed:exposed-dao:${property("exposed_version")}")!!)
+    implementation(include("org.jetbrains.exposed:exposed-jdbc:${property("exposed_version")}")!!)
+    implementation(include("org.jetbrains.exposed:exposed-kotlin-datetime:${property("exposed_version")}")!!)
+    implementation(include("org.xerial:sqlite-jdbc:3.45.3.0")!!)
 }
 
 tasks {
-
     processResources {
         inputs.property("version", project.version)
         filesMatching("fabric.mod.json") {

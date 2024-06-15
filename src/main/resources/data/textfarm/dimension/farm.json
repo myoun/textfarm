@@ -1,0 +1,12 @@
+{
+  "generator": {
+    "type": "textfarm:void",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "minecraft:plains"
+    },
+    "settings": {
+    }
+  },
+  "type": "textfarm:farm_type"
+}
